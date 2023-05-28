@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "rich-archery-387806",
+  "private_key_id": "7519159dd8c7b69c6ea0319f62c33a58f8b27040",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDlAXa66Z8JeYnN\nMCJhHBgB/kib0Nv9L9N9vCCaH3VS0DUR2+GKyrat34qhaWLzaUpVQXRQkFS16Rwd\nL+DNiSldGk8zChRIzNQh3GPPaZaAFxqJE1kbnLuS6Fz033hMnQzjJI85fZ4bPx62\n2o2GUn5a3vFXdabHr5AcvQDu6NSG7r26mFmpl/ltJDYjDRJkxy116ORRvLcfuM04\naRnh9K++ccGgqjxeIW0jGfuNGixEMuKygmDqS+3ncJlr1SZ+nUhzDFLNE1oqYKyD\nzvnXnBI25OkS4BbUkBlIRQapNFH6xb45/9qyu8xd49x9tUAqYpXZIL3AAtepdFg5\nNhCtwApLAgMBAAECggEASQ2y/QRq5gBeC9VXmkf2hqhCLGavzvBzVLBvbAsuB6mA\nzH4q0HZDWWsu07gFR2YmvtS/ELZCN7ex7sOnwJmJVvh+HGeSOfkRkO2372IdDyaP\nofvImMzib4ZtpPYm77XH9yvh/rKKfeGgYC+PJzLouP9W2RIgjqH8ZJaMliozJgmn\nYE6pcFgBeUQJBsPH4FUlGy0eOBom16o2mR+x3qS/+oF+3zXPi+/kLzDcJMf97vi3\nNOK6Hi9r9Ecm/5ymyDTvh85k0a2WgsBWxp4TXv+x2iGCZflZ6Skmcj1xX9QTIzx6\nOGJ/L9Oj0/2Xm1utX/kh1yvFnxPOBvO32Bb5sF27ZQKBgQD8u9UrN8nZweXqYw90\nD/QgCWlFpRUsCohATDsawzG31IeNJcC9Q6CTLsvBnqiUR0WF4mBDiVXrTP0LN3AV\nO9H2CvWkL/gD7AXPQioDUaIE6WPzUCNW6a5cM7euqjDxBbFvciE0LntZTBFH64DS\nS9AeN6McZppS8V7RlDHMQtIwnQKBgQDn9yCQm0LjWlWc5/eDO1YRilMXmOFgiJ3N\noIt8uBRoi9MbN1eLlZKJrNS7xP4lL3wmNhqxulrmrqqkcDdELWZJGPGp90FtwxYe\n3AmIAVaSI3sKCFEB4yRnuMVn8rOUGdM9BWRdbBnCcKk6UepDttS3Cz/YNWvPoX0z\nYYfUh+6uBwKBgDy61epgqXxN/3VnAFufScY4/LbjiEbg8QSiTMGNjfDifQAJxlq0\nWW2EnSmVemTHC4m0b/VKlv7HrTZ4x9ISYc2BrK0bablnia3X9Eh/4TLU8lOROiy0\nUlWNh+HMu53vBEgHYLstQC6g/LYPfRELbqMUM3mrngG4RlSOC7lNhTxxAoGALd8Q\n8YfCknMquvykVa9GNfHEvMXey9g4XJGDBAbjAkmkVZ18En5hnBgxeXBbUb8yLdxF\nKyBPGY8w75PBWhogQBROte3PYoVRuoiI2fxpwjyB+FnsqxLgACLp5sR3/rGctFR8\npHzcGzdsP7wzN3DQX+I5nefyifzFZYPD+KNo78ECgYEAtsTgTeUMF3AxKAdhHppS\n/+7rMLPFL5vNfzZDUWPG+3Z7+mFD7MdiE+KYv6sv7Vs+XfN2r8oirSakZuQ9nosy\nv/QyavwZ6IQJ2IZCKKvAKi7yfnRsy9eoAM8Y1/L6eeQSPBckHVT8EJZvTCbW2cCV\nnzUhspcK0kEsvPFi4Zc42RQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "dicomviewer@rich-archery-387806.iam.gserviceaccount.com",
+  "client_id": "115173018239156994312",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dicomviewer%40rich-archery-387806.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

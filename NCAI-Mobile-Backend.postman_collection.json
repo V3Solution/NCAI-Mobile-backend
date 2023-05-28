@@ -1,0 +1,925 @@
+{
+	"info": {
+		"_postman_id": "a9776b51-2795-4307-8d53-63676ffff9e2",
+		"name": "NCAI-Mobile-Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9532708"
+	},
+	"item": [
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "FHIR-Patient-PUT",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/fhir+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Account\",\n  \"id\": \"example\",\n  \"text\": {\n    \"status\": \"generated\",\n    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">HACC Funded Billing for Peter James Chalmers</div>\"\n  },\n  \"identifier\": [\n    {\n      \"system\": \"urn:oid:0.1.2.3.4.5.6.7\",\n      \"value\": \"654321\"\n    }\n  ],\n  \"status\": \"active\",\n  \"type\": {\n    \"coding\": [\n      {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\n        \"code\": \"PBILLACCT\",\n        \"display\": \"patient billing account\"\n      }\n    ],\n    \"text\": \"patient\"\n  },\n  \"name\": \"HACC Funded Billing for Peter James Chalmers\",\n  \"subject\": [\n    {\n      \"reference\": \"Patient/example\",\n      \"display\": \"Peter James Chalmers\"\n    }\n  ],\n  \"servicePeriod\": {\n    \"start\": \"2016-01-01\",\n    \"end\": \"2016-06-30\"\n  },\n  \"coverage\": [\n    {\n      \"coverage\": {\n        \"reference\": \"Coverage/7546D\"\n      },\n      \"priority\": 1\n    }\n  ],\n  \"owner\": {\n    \"reference\": \"Organization/hl7\"\n  },\n  \"description\": \"Hospital charges\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/4_0_0/account/62ed02ebb6b6477f9a4819a9",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"4_0_0",
+								"account",
+								"62ed02ebb6b6477f9a4819a9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FHIR-Allergy-PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"AllergyIntolerance\",\n  \"id\": \"example\",\n  \"text\": {\n    \"status\": \"generated\",\n    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\"><p><b>Generated Narrative</b></p><div style=\\\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\\"><p style=\\\"margin-bottom: 0px\\\">Resource &quot;example&quot; </p></div><p><b>identifier</b>: id: 49476534</p><p><b>clinicalStatus</b>: Active <span style=\\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\\"> (<a href=\\\"codesystem-allergyintolerance-clinical.html\\\">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style=\\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\\"> (<a href=\\\"codesystem-allergyintolerance-verification.html\\\">AllergyIntolerance Verification Status Codes</a>#confirmed)</span></p><p><b>type</b>: allergy</p><p><b>category</b>: food</p><p><b>criticality</b>: high</p><p><b>code</b>: Cashew nuts <span style=\\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\\"> (<a href=\\\"https://browser.ihtsdotools.org/\\\">SNOMED CT</a>#227493005)</span></p><p><b>patient</b>: <a href=\\\"patient-example.html\\\">Patient/example</a> &quot;Peter CHALMERS&quot;</p><p><b>onset</b>: 2004</p><p><b>recordedDate</b>: 2014-10-09T14:58:00+11:00</p><p><b>recorder</b>: <a href=\\\"practitioner-example.html\\\">Practitioner/example</a> &quot;Adam CAREFUL&quot;</p><p><b>asserter</b>: <a href=\\\"patient-example.html\\\">Patient/example</a> &quot;Peter CHALMERS&quot;</p><p><b>lastOccurrence</b>: 2012-06</p><p><b>note</b>: The criticality is high becasue of the observed anaphylactic reaction when challenged with cashew extract.</p><blockquote><p><b>reaction</b></p><p><b>substance</b>: cashew nut allergenic extract Injectable Product <span style=\\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\\"> (<a href=\\\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-rxNorm.html\\\">RxNorm</a>#1160593)</span></p><p><b>manifestation</b>: Anaphylactic reaction <span style=\\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\\"> (<a href=\\\"https://browser.ihtsdotools.org/\\\">SNOMED CT</a>#39579001)</span></p><p><b>description</b>: Challenge Protocol. Severe reaction to subcutaneous cashew extract. Epinephrine administered</p><p><b>onset</b>: 2012-06-12</p><p><b>severity</b>: severe</p><p><b>exposureRoute</b>: Subcutaneous route <span style=\\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\\"> (<a href=\\\"https://browser.ihtsdotools.org/\\\">SNOMED CT</a>#34206005)</span></p></blockquote><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: Urticaria <span style=\\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\\"> (<a href=\\\"https://browser.ihtsdotools.org/\\\">SNOMED CT</a>#64305001)</span></p><p><b>onset</b>: 2004</p><p><b>severity</b>: moderate</p><p><b>note</b>: The patient reports that the onset of urticaria was within 15 minutes of eating cashews.</p></blockquote></div>\"\n  },\n  \"identifier\": [\n    {\n      \"system\": \"http://acme.com/ids/patients/risks\",\n      \"value\": \"49476534\"\n    }\n  ],\n  \"clinicalStatus\": {\n    \"coding\": [\n      {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical\",\n        \"code\": \"active\",\n        \"display\": \"Active\"\n      }\n    ]\n  },\n  \"verificationStatus\": {\n    \"coding\": [\n      {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-verification\",\n        \"code\": \"confirmed\",\n        \"display\": \"Confirmed\"\n      }\n    ]\n  },\n  \"type\": \"allergy\",\n  \"category\": [\n    \"food\"\n  ],\n  \"criticality\": \"high\",\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"227493005\",\n        \"display\": \"Cashew nuts\"\n      }\n    ]\n  },\n  \"patient\": {\n    \"reference\": \"Patient/example\"\n  },\n  \"onsetDateTime\": \"2004\",\n  \"recordedDate\": \"2014-10-09T14:58:00+11:00\",\n  \"recorder\": {\n    \"reference\": \"Practitioner/example\"\n  },\n  \"asserter\": {\n    \"reference\": \"Patient/example\"\n  },\n  \"lastOccurrence\": \"2012-06\",\n  \"note\": [\n    {\n      \"text\": \"The criticality is high becasue of the observed anaphylactic reaction when challenged with cashew extract.\"\n    }\n  ],\n  \"reaction\": [\n    {\n      \"substance\": {\n        \"coding\": [\n          {\n            \"system\": \"http://www.nlm.nih.gov/research/umls/rxnorm\",\n            \"code\": \"1160593\",\n            \"display\": \"cashew nut allergenic extract Injectable Product\"\n          }\n        ]\n      },\n      \"manifestation\": [\n        {\n          \"coding\": [\n            {\n              \"system\": \"http://snomed.info/sct\",\n              \"code\": \"39579001\",\n              \"display\": \"Anaphylactic reaction\"\n            }\n          ]\n        }\n      ],\n      \"description\": \"Challenge Protocol. Severe reaction to subcutaneous cashew extract. Epinephrine administered\",\n      \"onset\": \"2012-06-12\",\n      \"severity\": \"severe\",\n      \"exposureRoute\": {\n        \"coding\": [\n          {\n            \"system\": \"http://snomed.info/sct\",\n            \"code\": \"34206005\",\n            \"display\": \"Subcutaneous route\"\n          }\n        ]\n      }\n    },\n    {\n      \"manifestation\": [\n        {\n          \"coding\": [\n            {\n              \"system\": \"http://snomed.info/sct\",\n              \"code\": \"64305001\",\n              \"display\": \"Urticaria\"\n            }\n          ]\n        }\n      ],\n      \"onset\": \"2004\",\n      \"severity\": \"moderate\",\n      \"note\": [\n        {\n          \"text\": \"The patient reports that the onset of urticaria was within 15 minutes of eating cashews.\"\n        }\n      ]\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/4_0_0/AllergyIntolerance/khizar-hayat12",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"4_0_0",
+								"AllergyIntolerance",
+								"khizar-hayat12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FHIR-Appointment-POST",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Appointment\",\n  \"id\": \"example\",\n  \"text\": {\n    \"status\": \"generated\",\n    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Bian MRI results discussion</div>\"\n  },\n  \"status\": \"booked\",\n  \"serviceCategory\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://example.org/service-category\",\n          \"code\": \"gp\",\n          \"display\": \"General Practice\"\n        }\n      ]\n    }\n  ],\n  \"serviceType\": [\n    {\n      \"coding\": [\n        {\n          \"code\": \"52\",\n          \"display\": \"General Discussion\"\n        }\n      ]\n    }\n  ],\n  \"specialty\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"394814009\",\n          \"display\": \"General practice\"\n        }\n      ]\n    }\n  ],\n  \"appointmentType\": {\n    \"coding\": [\n      {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0276\",\n        \"code\": \"FOLLOWUP\",\n        \"display\": \"A follow up visit from a previous appointment\"\n      }\n    ]\n  },\n  \"reasonReference\": [\n    {\n      \"reference\": \"Condition/example\",\n      \"display\": \"Severe burn of left ear\"\n    }\n  ],\n  \"priority\": 5,\n  \"description\": \"Discussion on the results of your recent MRI\",\n  \"start\": \"2013-12-10T09:00:00Z\",\n  \"end\": \"2013-12-10T11:00:00Z\",\n  \"created\": \"2013-10-10\",\n  \"comment\": \"Further expand on the results of the MRI and determine the next actions that may be appropriate.\",\n  \"basedOn\": [\n    {\n      \"reference\": \"ServiceRequest/myringotomy\"\n    }\n  ],\n  \"participant\": [\n    {\n      \"actor\": {\n        \"reference\": \"Patient/example\",\n        \"display\": \"Peter James Chalmers\"\n      },\n      \"required\": \"required\",\n      \"status\": \"accepted\"\n    },\n    {\n      \"type\": [\n        {\n          \"coding\": [\n            {\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\n              \"code\": \"ATND\"\n            }\n          ]\n        }\n      ],\n      \"actor\": {\n        \"reference\": \"Practitioner/example\",\n        \"display\": \"Dr Adam Careful\"\n      },\n      \"required\": \"required\",\n      \"status\": \"accepted\"\n    },\n    {\n      \"actor\": {\n        \"reference\": \"Location/1\",\n        \"display\": \"South Wing, second floor\"\n      },\n      \"required\": \"required\",\n      \"status\": \"accepted\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/4_0_0/Appointment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"4_0_0",
+								"Appointment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3081/4_0_0/Patient/yasin/_history/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3081/4_0_0/Patient/yasin/_history/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3081",
+							"path": [
+								"4_0_0",
+								"Patient",
+								"yasin",
+								"_history",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Signup-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Muhammad Mubeen yasin\",\n    \"phone\":\"03432275635\",\n    \"email\":\"mubeenyasin@gmail.com\",\n    \"password\":\"Abc@123456\",\n    \"gender\":\"Male\",\n    \"dob\":\"12/12/2000\",\n    \"addressUse\":\"Faisalabad\",\n    \"addressType\":\"Parmanent\",\n    \"streetName\":[\"Gosia Colony Street # 03\"],\n    \"city\":\"Faisalabad\",\n    \"district\":\"Faisalabad\",\n    \"state\":\"Punjab\",\n    \"postelCode\":\"37630\",\n    \"country\":\"Pakistan\",\n    \"system\":\"6337cf980710e3ae386a7ddc\",\n    \"site\":\"6337cf8e0710e3ae386a7dd9\",\n    \"role\":\"SuperAdmin\",\n    \"specialty\":\"Neurologist\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signin-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"mubeenyasin@gmail.com\",\n    \"password\":\"Abc@123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-Single",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "tokenType",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmQ4ZTAwMmVjMzg0ZTkzNzQ5YjQ3NiIsImlhdCI6MTY2MzkyOTg1Nn0.PCSUS2ciL_F8VaBjwJpW0Je6zePIusPRGC3e7NYuNuI",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmQ4OWM5M2ZlZDhhZmUxMWNmN2ZkNCIsImlhdCI6MTY2MzkyODg2MH0.lGRaNqRshXE5Oma5yfhnBJP49HrjkXuXYGRIHOBYLWE",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-All-User",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "tokenType",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzU3MzI3NzI5ZjNhMGIyZDhkMGMzMSIsImlhdCI6MTY2NDQ0NzI4OH0.huvYjdf_LiRqvN7wBf0pvwRhU5LC3qPlR0YUDI95Mf8",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/user/alluser",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"alluser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit-User-Access",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "tokenType",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMmQ4ZTAwMmVjMzg0ZTkzNzQ5YjQ3NiIsImlhdCI6MTY2MzkyOTg1Nn0.PCSUS2ciL_F8VaBjwJpW0Je6zePIusPRGC3e7NYuNuI",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"system\":\"6337d35c260f34e34109d39b\",\n    \"site\":\"6337d32a260f34e34109d398\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user/access/6337cfbc0710e3ae386a7de1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"access",
+								"6337cfbc0710e3ae386a7de1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "google-api",
+			"item": [
+				{
+					"name": "Get_Dicom_Stores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/google/getdicomStores?DataSetID=First_System",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"google",
+								"getdicomStores"
+							],
+							"query": [
+								{
+									"key": "DataSetID",
+									"value": "First_System"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Data_Sets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/google/getdatasets",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"google",
+								"getdatasets"
+							],
+							"query": [
+								{
+									"key": "DataSetID",
+									"value": "Patel_Hospital",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dicom_Web_Search_Studies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/google/dicomWebSearchStudies?DataSetID=Patel_Hospital&DicomStoreID=Faisalabad",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"google",
+								"dicomWebSearchStudies"
+							],
+							"query": [
+								{
+									"key": "DataSetID",
+									"value": "Patel_Hospital"
+								},
+								{
+									"key": "DicomStoreID",
+									"value": "Faisalabad"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dicom_Web_Search_For_Instances",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/google/dicomWebSearchForInstances?DataSetID=First_System&DicomStoreID=FirstSystemSite1&Value=CT",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"google",
+								"dicomWebSearchForInstances"
+							],
+							"query": [
+								{
+									"key": "DataSetID",
+									"value": "First_System"
+								},
+								{
+									"key": "DicomStoreID",
+									"value": "FirstSystemSite1"
+								},
+								{
+									"key": "Value",
+									"value": "CT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dicom_Web_Retrieve_Instance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/google/dicomWebRetrieveInstance?datasetId=Patel_Hospital&dicomStoreId=Faisalabad&studyUid=1.2.392.200036.9116.2.1.7.8812167.296&seriesUid=1.2.392.200036.9116.2.1.7.8812167.296.1&instanceUid=1.2.392.200036.9116.2.1.7.8812167.20211209.13314000",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"google",
+								"dicomWebRetrieveInstance"
+							],
+							"query": [
+								{
+									"key": "datasetId",
+									"value": "Patel_Hospital"
+								},
+								{
+									"key": "dicomStoreId",
+									"value": "Faisalabad"
+								},
+								{
+									"key": "studyUid",
+									"value": "1.2.392.200036.9116.2.1.7.8812167.296"
+								},
+								{
+									"key": "seriesUid",
+									"value": "1.2.392.200036.9116.2.1.7.8812167.296.1"
+								},
+								{
+									"key": "instanceUid",
+									"value": "1.2.392.200036.9116.2.1.7.8812167.20211209.13314000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/google/userInfo?DataSetID=System_1&DicomStoreID=Site_1A&PatientName=CQ500-CT-3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"google",
+								"userInfo"
+							],
+							"query": [
+								{
+									"key": "DataSetID",
+									"value": "System_1"
+								},
+								{
+									"key": "DicomStoreID",
+									"value": "Site_1A"
+								},
+								{
+									"key": "PatientName",
+									"value": "CQ500-CT-3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DCM/PNG/JPEG-File-Downloader",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/google/dicomWebRetrieveInstance/dcmfile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"google",
+								"dicomWebRetrieveInstance",
+								"dcmfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "organization",
+			"item": [
+				{
+					"name": "create_organization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"DICOM3\",\n    \"type\":\"HealthCare\",\n    \"alies\":\"Health\",\n    \"telePhone\":[{\"telePhone\":\"0414362031\"}],\n    \"addressUse\":\"Faisalabad\",\n    \"addressType\":\"Parmanent\",\n    \"streetName\":\"Gocia Colony Street # 03\",\n    \"city\":\"Faisalabad\",\n    \"district\":\"Faisalabad\",\n    \"state\":\"Punjab\",\n    \"postelCode\":\"37630\",\n    \"country\":\"Pakistan\",\n    \"orgEmail\":\"mubeen@gmail.com\",\n    \"purpose\":\"health care\",\n    \"phoneNo\":\"03423344567\",\n    \"siteName\":\"healthcare FSD\",\n    \"sitePurpose\":\"health purpose\",\n    \"sitePhoneNo\":\"0412345678\",\n    \"siteAddress\":\"Khurrialwala\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/organizations/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-organization",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/organizations",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find-organization",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/organizations/find?name=DICOM",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"organizations",
+								"find"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "DICOM"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Systems",
+			"item": [
+				{
+					"name": "create-system",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\":\"Combined Miltary Hopital\",\n    \"alias\":\"CMH\",\n    \"site\":\"6337d32a260f34e34109d398\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/systems/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"systems",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-system",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/systems",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"systems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-system",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/systems/632af35c4d3ca4d71832b7ae",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"systems",
+								"632af35c4d3ca4d71832b7ae"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-single-system",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/systems/632af4baca71a51e6225f50e",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"systems",
+								"632af4baca71a51e6225f50e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-system",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\":\"Jinnah Postgraduate Medical Centre\",\n    \"alias\":\"JPMC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/systems/632af4baca71a51e6225f50e",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"systems",
+								"632af4baca71a51e6225f50e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sites",
+			"item": [
+				{
+					"name": "create-sites",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"siteName\":\"Combined Miltary Hospital\",\n    \"siteAlias\":\"CMH\",\n    \"siteAddress\":\"Sarwar Shaheed Road, Cantonment, Lahore.\",\n    \"shortName\":\"cmh-er\",\n    \"rank\":1,\n    \"phoneNumber\":\"+926005769\",\n    \"fullName\":\"cmh Emergency Department\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/sites/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gett-All-Sites",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/sites",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-site",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/sites/632ade1edf8812c3af8e2ba7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"632ade1edf8812c3af8e2ba7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-sites",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"siteName\":\"Jinnah Postgraduate Medical Centre\",\n    \"siteAlias\":\"jpmc\",\n    \"siteAddress\":\"Rafiqui Sarwar Shaheed Road, Cantonment, Karachi.\",\n    \"shortName\":\"jpmc-er\",\n    \"rank\":1,\n    \"phoneNumber\":\"+926555689\",\n    \"fullName\":\"JPMC Emergency Department\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/sites/632ade84df8812c3af8e2baa",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"632ade84df8812c3af8e2baa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-single-site",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/sites/632ade84df8812c3af8e2baa",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"sites",
+								"632ade84df8812c3af8e2baa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3036",
+			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "https://dicom-viewer-backend.herokuapp.com",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
